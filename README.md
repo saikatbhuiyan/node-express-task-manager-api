@@ -1,4 +1,4 @@
-# This is a task-app
+# This is a task manager app
 
 ## Techs
   - Node
