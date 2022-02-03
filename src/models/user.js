@@ -51,6 +51,13 @@ const userSchema = new mongoose.Schema({
   ],
 });
 
+// using this we pupulate user tasks
+userSchema.virtual("tasks", {
+  ref: "Task",
+  localField: "_id",
+  foreignField: "owner",
+});
+
 // it will run when we call user object
 userSchema.methods.toJSON = function () {
   const user = this;
@@ -102,4 +109,3 @@ userSchema.pre("save", async function (next) {
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
-
