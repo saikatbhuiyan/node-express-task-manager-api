@@ -7,7 +7,7 @@ const { sendWelcomeEmail, sendCancelationEmail } = require("../emails/account");
 
 const router = new express.Router();
 
-router.get("/test", auth, async (req, res) => {
+router.get("/test", async (req, res) => {
   res.send({ hello: "world" });
 });
 
